@@ -47,6 +47,7 @@ function new_notes(ticket_color,user_text,taskid12)
    removal(ticket);
    handlelock(ticket);
    body1.appendChild(ticket);
+   handleColor(ticket);
 }
 
 notes.addEventListener(`keydown`,function(e)
@@ -73,11 +74,11 @@ for(let i=0;i<allcolor.length;i++)
                     allcolor[j].style.borderColor = 'black';
                     allcolor[j].style.borderWidth='0.1px';
                 }
-           
-           allcolor[i].classList.add("active");
-           allcolor[i].style.borderColor = 'blue';
-           allcolor[i].style.borderWidth='2.7px';
-            ticket_color_selector=allcolor[i].classList[0];
+                
+                allcolor[i].classList.add("active");
+                allcolor[i].style.borderColor = 'blue';
+                allcolor[i].style.borderWidth='2.7px';
+                ticket_color_selector=allcolor[i].classList[0];
            
         })
     }
@@ -129,4 +130,18 @@ function handlelock(ticket)
                     textarea2.setAttribute("contenteditable","false")
                 }
         })
+}
+
+const colorList = ["rgb(0, 128, 0)", "rgb(255, 0, 0)", "rgb(255, 255, 0)", "rgb(0, 0, 0)"];
+
+function handleColor(ticket) {
+    const sel_col = ticket.querySelector(".ncolor");
+    
+    sel_col.addEventListener('click', () => {
+        const computedStyle = getComputedStyle(sel_col);
+        let currentColor = computedStyle.backgroundColor;
+        let index = colorList.findIndex(color => color === currentColor);
+        let new_index=(index+1)%colorList.length;
+        sel_col.style.backgroundColor=colorList[new_index]
+    });
 }
