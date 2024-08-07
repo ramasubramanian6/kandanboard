@@ -5,7 +5,7 @@
 }
 
 body {
-    display: flexbox;
+    
     margin: 0;
     padding: 0;
     font-size: 16px;
@@ -17,7 +17,7 @@ body {
   
     display: flex;
     align-items: center;
-    background: linear-gradient(to right, rgb(133, 0, 133), rgba(255, 255, 255, 0.438));
+    background-color: rgb(69, 69, 68);
 }
 
 .outer > *{
@@ -205,7 +205,6 @@ body {
     width: 75%;
     background-color: rgb(236, 179, 179);
     font-size: medium;
-   font-style: ;
     color: black;
     padding: 5px;
     box-sizing: border-box;
