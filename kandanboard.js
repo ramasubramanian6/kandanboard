@@ -1,7 +1,7 @@
 const plus = document.querySelector(".add");
 const notes = document.querySelector(".window");
 let flag = true;
-let ticket_color_selector = "rgb(0, 128, 0)";
+let ticket_color_selector = "rgb(22, 170, 19)";
 let tickets = localStorage.getItem("Ticket") ? JSON.parse(localStorage.getItem("Ticket")) : [];
 
 plus.addEventListener('click', function () {
