@@ -135,7 +135,7 @@ function handlelock(ticket, taskid) {
     });
 }
 
-const colorList = ["rgb(0, 128, 0)", "rgb(255, 0, 0)", "rgb(255, 255, 0)", "rgb(0, 0, 0)"];
+const colorList = ["rgb(22, 170, 19)", "rgb(255, 0, 0)", "rgb(255, 255, 0)", "rgb(0, 0, 0)"];
 
 function handleColor(ticket, taskid) {
     const sel_col = ticket.querySelector(".ncolor");
