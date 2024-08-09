@@ -1,7 +1,7 @@
 const plus = document.querySelector(".add");
 const notes = document.querySelector(".window");
 let flag = true;
-let ticket_color_selector = "green";
+let ticket_color_selector = "rgb(0, 128, 0)";
 let tickets = localStorage.getItem("Ticket") ? JSON.parse(localStorage.getItem("Ticket")) : [];
 
 plus.addEventListener('click', function () {
@@ -173,6 +173,10 @@ Allcolors.forEach((e) => {
         else if(sel_color==='yellow')
             {
                 sel_color="rgb(255, 255, 0)";
+            }
+            else if(sel_color==='green')
+            {
+                sel_color="rgb(0, 128, 0)";
             }
                 else 
                     {
