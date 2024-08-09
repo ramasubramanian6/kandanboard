@@ -84,9 +84,12 @@ const delbut = document.querySelector(".remove-btn");
 let flag1 = true;
 delbut.addEventListener("click", () => {
     if (flag1) {
+        alert("Delete mode as activiate !");
         delbut.style.color = 'red';
         flag1 = false;
     } else {
+       
+        alert("Delete mode as de-activiate !");
         delbut.style.color = "black";
         flag1 = true;
     }
@@ -95,6 +98,7 @@ delbut.addEventListener("click", () => {
 function removal(ticket, taskid) {
     ticket.addEventListener('click', () => {
         if (flag1 == false) {
+           
             ticket.remove();
             tickets = tickets.filter((t) => t.taskid !== taskid);
             localStorage.setItem("Ticket", JSON.stringify(tickets));
@@ -153,6 +157,7 @@ function handleColor(ticket, taskid) {
             });
             localStorage.setItem("Ticket", JSON.stringify(db));
         }
+        
     });
 }
 
@@ -160,8 +165,27 @@ const Allcolors = document.querySelectorAll("body > header > nav > div > div.fun
 
 Allcolors.forEach((e) => {
     e.addEventListener('click', function () {
-        const sel_color = e.classList[0];
-        const filter_tickets = tickets.filter((t) => t.ticket_color === sel_color);
+       let sel_color = e.classList[0];
+        if(sel_color==="red")
+        {
+            sel_color="rgb(255, 0, 0)";
+        }
+        else if(sel_color==='yellow')
+            {
+                sel_color="rgb(255, 255, 0)";
+            }
+            else if(sel_color==="green")
+                {
+                    sel_color="rgb(0, 128, 0)";
+                }
+                else 
+                    {
+                        sel_color="rgb(0, 0, 0)";
+                    }
+                    
+
+        const db = JSON.parse(localStorage.getItem("Ticket"));
+        const filter_tickets = db.filter((t) => t.ticket_color === sel_color);
         body1.innerHTML = "";
         filter_tickets.forEach((ticket) => new_notes(ticket.ticket_color, ticket.user_text, ticket.taskid, false));
     });
