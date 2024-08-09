@@ -174,10 +174,6 @@ Allcolors.forEach((e) => {
             {
                 sel_color="rgb(255, 255, 0)";
             }
-            else if(sel_color==="green")
-                {
-                    sel_color="rgb(0, 128, 0)";
-                }
                 else 
                     {
                         sel_color="rgb(0, 0, 0)";
